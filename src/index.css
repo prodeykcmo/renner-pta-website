@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-100 text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-ink;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-scarlet-600 ring-offset-2 ring-offset-cream-100 rounded-md;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-scarlet-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-scarlet-700;
+  }
+}
+
+/* Google Translate banner cleanup — Google injects an iframe at the top of
+   the page when active. This keeps it from pushing our header down. */
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0 !important; }
