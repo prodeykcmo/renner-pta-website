@@ -25,33 +25,42 @@ const cols = [
 ];
 
 export default function Footer() {
-  const { contact } = siteConfig;
+  const { contact, social } = siteConfig;
   return (
-    <footer className="mt-24 border-t border-ink/5 bg-cream-50">
+    <footer className="mt-24 bg-navy-700 text-cream-50">
+      {/* Spirit stripe — thin red accent above footer to reinforce school colors. */}
+      <div className="h-1.5 bg-scarlet-500" aria-hidden />
+
       <div className="container-px py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 font-display text-lg font-semibold">
-              <span
-                className="grid h-9 w-9 place-items-center rounded-2xl bg-scarlet-600 font-bold text-cream-50"
-                aria-hidden
-              >
-                R
-              </span>
-              {siteConfig.name}
+            <Link to="/" className="flex items-center gap-3 font-display text-lg font-semibold text-cream-50">
+              <img
+                src="/renner-logo.png"
+                alt="Renner Roadrunners"
+                className="h-12 w-12 flex-none rounded-full bg-white object-contain p-1"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <span>{siteConfig.shortName}</span>
             </Link>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-cream-50/85">
               {siteConfig.mission}
             </p>
-            <address className="mt-4 not-italic text-sm text-ink-soft">
-              {siteConfig.schoolName}
-              <br />
+            <address className="mt-4 not-italic text-sm text-cream-50/85">
+              <strong className="block text-cream-50">{siteConfig.schoolName}</strong>
+              <span className="block text-cream-50/75">{siteConfig.district}</span>
               {contact.address.line1}
               <br />
               {contact.address.city}, {contact.address.state} {contact.address.zip}
               <br />
-              <a href={`tel:${contact.schoolPhone}`} className="hover:text-ink">
+              <a href={`tel:${contact.schoolPhone}`} className="hover:text-cream-50">
                 {contact.schoolPhone}
+              </a>
+              <br />
+              <a href={`mailto:${contact.email}`} className="hover:text-cream-50">
+                {contact.email}
               </a>
             </address>
             <div className="mt-6">
@@ -63,7 +72,7 @@ export default function Footer() {
 
           {cols.map((col) => (
             <div key={col.heading}>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-ink">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-cream-50">
                 {col.heading}
               </h3>
               <ul className="mt-4 space-y-2">
@@ -71,7 +80,7 @@ export default function Footer() {
                   <li key={l.to}>
                     <Link
                       to={l.to}
-                      className="text-sm text-ink-soft hover:text-ink"
+                      className="text-sm text-cream-50/80 hover:text-cream-50"
                     >
                       {l.label}
                     </Link>
@@ -82,35 +91,44 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-ink/5 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-ink-muted">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. {siteConfig.district}.
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-cream-50/15 pt-6 sm:flex-row sm:items-center">
+          <p className="text-xs text-cream-50/70">
+            &copy; {new Date().getFullYear()} {siteConfig.name}. Go Roadrunners!
           </p>
           <div className="flex items-center gap-3">
             <a
               href={`mailto:${contact.email}`}
               aria-label="Email the PTA"
-              className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink-soft ring-1 ring-ink/10 hover:text-ink"
+              className="grid h-9 w-9 place-items-center rounded-full bg-cream-50/10 text-cream-50 ring-1 ring-cream-50/20 hover:bg-cream-50/20"
             >
               <Icon name="mail" />
             </a>
             <a
-              href={siteConfig.social.instagram}
+              href={social.facebook}
+              aria-label="Facebook"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="grid h-9 w-9 place-items-center rounded-full bg-cream-50/10 text-cream-50 ring-1 ring-cream-50/20 hover:bg-cream-50/20"
+            >
+              <Icon name="facebook" />
+            </a>
+            <a
+              href={social.instagram}
               aria-label="Instagram"
               target="_blank"
               rel="noreferrer noopener"
-              className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink-soft ring-1 ring-ink/10 hover:text-ink"
+              className="grid h-9 w-9 place-items-center rounded-full bg-cream-50/10 text-cream-50 ring-1 ring-cream-50/20 hover:bg-cream-50/20"
             >
               <Icon name="instagram" />
             </a>
             <a
-              href={siteConfig.social.facebook}
-              aria-label="Facebook"
+              href={social.tiktok}
+              aria-label="TikTok"
               target="_blank"
               rel="noreferrer noopener"
-              className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink-soft ring-1 ring-ink/10 hover:text-ink"
+              className="grid h-9 w-9 place-items-center rounded-full bg-cream-50/10 text-cream-50 ring-1 ring-cream-50/20 hover:bg-cream-50/20"
             >
-              <Icon name="facebook" />
+              <Icon name="tiktok" />
             </a>
           </div>
         </div>

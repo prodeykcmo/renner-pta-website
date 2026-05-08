@@ -14,7 +14,7 @@
     @apply font-display tracking-tight text-ink;
   }
   :focus-visible {
-    @apply outline-none ring-2 ring-scarlet-600 ring-offset-2 ring-offset-cream-100 rounded-md;
+    @apply outline-none ring-2 ring-scarlet-500 ring-offset-2 ring-offset-cream-100 rounded-md;
   }
 }
 
@@ -24,7 +24,7 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-scarlet-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-scarlet-700;
+    @apply inline-flex items-center gap-2 rounded-full bg-navy-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-navy-700;
   }
 }
 

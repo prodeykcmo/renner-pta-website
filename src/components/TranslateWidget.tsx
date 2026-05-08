@@ -54,15 +54,14 @@ export default function TranslateWidget() {
   }, []);
 
   return (
-    <div
-      className="bg-navy-700 text-cream-50 text-xs sm:text-sm"
-      aria-label="Translate this site"
-    >
-      <div className="container-px flex flex-wrap items-center justify-between gap-2 py-1.5">
-        <span className="opacity-90">
-          🌐 Translate this site:
-        </span>
-        <div id="google_translate_element" />
+    <div className="text-xs sm:text-sm" aria-label="Translate this site">
+      {/* Thin red spirit stripe at the very top of every page */}
+      <div className="h-1 bg-scarlet-500" aria-hidden />
+      <div className="bg-navy-700 text-cream-50">
+        <div className="container-px flex flex-wrap items-center justify-between gap-2 py-1.5">
+          <span className="opacity-90">🌐 Translate this site:</span>
+          <div id="google_translate_element" />
+        </div>
       </div>
     </div>
   );

@@ -21,20 +21,31 @@ export default function Header() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/5 bg-cream-100/85 backdrop-blur supports-[backdrop-filter]:bg-cream-100/70">
-      <div className="container-px flex h-16 items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 border-b-2 border-scarlet-500/20 bg-cream-100/95 backdrop-blur supports-[backdrop-filter]:bg-cream-100/85">
+      <div className="container-px flex h-20 items-center justify-between gap-4">
         <Link
           to="/"
-          className="flex items-center gap-2 font-display text-lg font-semibold text-ink"
+          className="flex items-center gap-3 font-display text-lg font-semibold text-ink"
           aria-label={`${siteConfig.name} home`}
         >
-          <span
-            className="grid h-9 w-9 place-items-center rounded-2xl bg-scarlet-600 font-bold text-cream-50 shadow-soft"
-            aria-hidden
-          >
-            R
+          {/* Roadrunner logo image — upload to public/renner-logo.png. */}
+          <img
+            src="/renner-logo.png"
+            alt="Renner Roadrunners"
+            className="h-12 w-12 flex-none object-contain"
+            onError={(e) => {
+              // Graceful fallback if logo isn't uploaded yet.
+              (e.currentTarget as HTMLImageElement).style.display = 'none';
+            }}
+          />
+          <span className="leading-tight">
+            <span className="block text-base font-bold text-navy-700 sm:text-lg">
+              {siteConfig.shortName}
+            </span>
+            <span className="hidden text-[11px] font-medium uppercase tracking-wider text-ink-muted sm:block">
+              Renner Elementary · Park Hill
+            </span>
           </span>
-          <span className="hidden sm:inline">{siteConfig.shortName}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -46,7 +57,7 @@ export default function Header() {
                   className={({ isActive }) =>
                     `rounded-full px-3 py-2 text-sm font-medium transition-colors ${
                       isActive
-                        ? 'bg-scarlet-50 text-scarlet-700'
+                        ? 'bg-navy-50 text-navy-700'
                         : 'text-ink-soft hover:bg-cream-200 hover:text-ink'
                     }`
                   }
@@ -91,7 +102,7 @@ export default function Header() {
                   className={({ isActive }) =>
                     `block rounded-2xl px-4 py-3 text-base font-medium ${
                       isActive
-                        ? 'bg-scarlet-50 text-scarlet-700'
+                        ? 'bg-navy-50 text-navy-700'
                         : 'text-ink hover:bg-cream-200'
                     }`
                   }

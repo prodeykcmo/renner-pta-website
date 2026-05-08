@@ -46,14 +46,14 @@ export default function Home() {
           aria-hidden
         />
         <div
-          className="absolute -top-24 right-1/2 -z-10 h-[420px] w-[420px] translate-x-1/2 rounded-full bg-scarlet-100/60 blur-3xl"
+          className="absolute -top-32 right-1/2 -z-10 h-[480px] w-[480px] translate-x-1/2 rounded-full bg-navy-100/60 blur-3xl"
           aria-hidden
         />
-        <div className="container-px py-16 sm:py-24 lg:py-28">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="container-px py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
             <div>
               <span className="eyebrow">{siteConfig.district} · Roadrunners</span>
-              <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
+              <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] text-navy-700 sm:text-5xl lg:text-6xl">
                 {siteConfig.tagline}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
@@ -81,37 +81,34 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Hero card */}
+            {/* Hero — roadrunner logo featured prominently */}
             <div className="relative">
-              <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-scarlet-100/60 blur-2xl" aria-hidden />
-              <div className="rounded-[2rem] bg-white p-6 shadow-lift ring-1 ring-ink/5">
-                <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-scarlet-100 via-cream-100 to-navy-100">
-                  <div className="grid h-full grid-cols-3 grid-rows-2 gap-2 p-4">
-                    {(['calendar', 'users', 'heart', 'star', 'gift', 'megaphone'] as const).map(
-                      (n) => (
-                        <div
-                          key={n}
-                          className="grid place-items-center rounded-2xl bg-white/70 text-scarlet-700 shadow-soft"
-                        >
-                          <Icon name={n} className="h-7 w-7" />
-                        </div>
-                      ),
-                    )}
-                  </div>
-                </div>
-                <div className="mt-5 flex items-start gap-3">
-                  <span
-                    className="grid h-10 w-10 flex-none place-items-center rounded-2xl bg-scarlet-50 text-scarlet-700"
-                    aria-hidden
-                  >
-                    <Icon name="calendar" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-ink">Everything in one place</p>
-                    <p className="text-sm text-ink-soft">
-                      Events, signups, dues, donations, and resources for every Roadrunner family.
-                    </p>
-                  </div>
+              {/* Soft red glow underneath */}
+              <div
+                className="absolute -inset-6 -z-10 rounded-full bg-scarlet-100/40 blur-3xl"
+                aria-hidden
+              />
+              <div
+                className="absolute -inset-2 -z-10 rounded-full bg-navy-100/40 blur-2xl"
+                aria-hidden
+              />
+              <div className="rounded-[2rem] bg-white p-8 shadow-lift ring-1 ring-navy-100 sm:p-10">
+                <img
+                  src="/renner-logo.png"
+                  alt="Renner Roadrunners — proud mascot of Alfred L. Renner Elementary"
+                  className="mx-auto h-64 w-auto sm:h-80"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div className="mt-6 border-t border-navy-100 pt-5 text-center">
+                  <p className="font-display text-2xl font-bold text-scarlet-600">
+                    Go Roadrunners!
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-navy-700">
+                    {siteConfig.schoolName}
+                  </p>
+                  <p className="text-xs text-ink-muted">{siteConfig.district}</p>
                 </div>
               </div>
             </div>
@@ -130,9 +127,9 @@ export default function Home() {
           {ways.map((w) => (
             <div
               key={w.title}
-              className="flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-ink/5"
+              className="flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-scarlet-50 text-scarlet-700">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
                 <Icon name={w.icon} className="h-6 w-6" />
               </span>
               <h3 className="mt-4 text-xl font-semibold">{w.title}</h3>
@@ -160,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* Featured upcoming events */}
-      <section className="bg-cream-50/80 py-16">
+      <section className="bg-cream-200/50 py-16">
         <div className="container-px">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeader
@@ -170,7 +167,7 @@ export default function Home() {
             />
             <Link
               to="/events"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-scarlet-700 hover:text-scarlet-800"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 hover:text-scarlet-700"
             >
               See full calendar <Icon name="arrow-right" className="h-4 w-4" />
             </Link>
@@ -202,7 +199,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Closing CTA */}
+      {/* Closing CTA — bold red school-spirit panel */}
       <section className="container-px py-16">
         <div className="overflow-hidden rounded-[2rem] bg-scarlet-600 px-8 py-12 text-cream-50 shadow-lift sm:px-12 sm:py-16">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
@@ -210,7 +207,7 @@ export default function Home() {
               <h2 className="font-display text-3xl font-semibold sm:text-4xl">
                 Renner runs on volunteers and dues.
               </h2>
-              <p className="mt-3 max-w-xl text-cream-50/90">
+              <p className="mt-3 max-w-xl text-cream-50/95">
                 Two minutes and $10 of dues unlocks every PTA-funded moment of your child's year.
               </p>
             </div>
@@ -228,7 +225,7 @@ export default function Home() {
                 to="/donate"
                 size="lg"
                 variant="ghost"
-                className="bg-white/10 text-cream-50 ring-cream-50/30 hover:bg-white/20"
+                className="bg-white/10 text-cream-50 ring-cream-50/40 hover:bg-white/20"
               >
                 Donate
               </CTAButton>

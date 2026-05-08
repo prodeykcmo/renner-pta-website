@@ -4,33 +4,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Renner Elementary + Park Hill District palette.
+        // Renner Roadrunners palette — pulled from the school logo.
         // Edit hex values here to rebrand the whole site at once.
+
+        // Primary red — matches the roadrunner mascot.
         scarlet: {
-          50: '#FFF1F3',
-          100: '#FFD9DE',
-          200: '#FFB3BD',
-          300: '#FF8694',
-          400: '#F25569',
-          500: '#D9304A',
-          600: '#C8102E', // Park Hill / Renner primary
-          700: '#A60B25',
-          800: '#7E0820',
-          900: '#5A0617',
+          50: '#FEF1F1',
+          100: '#FCD9D9',
+          200: '#F8B0B0',
+          300: '#F18585',
+          400: '#E55454',
+          500: '#D52B1E',
+          600: '#C0241A',
+          700: '#9C1B14',
+          800: '#76140F',
+          900: '#530D0A',
         },
+        // Royal blue — matches the logo's circle and ribbon.
         navy: {
-          50: '#EEF1F7',
-          100: '#D6DCEA',
-          200: '#A9B5CF',
-          400: '#586790',
-          600: '#2E3F6B',
-          700: '#1E2A4A',
-          800: '#141C33',
+          50: '#F0F4FB',
+          100: '#D7E0F1',
+          200: '#A8B7DD',
+          300: '#7790C7',
+          400: '#4D6CB0',
+          500: '#2E4D94',
+          600: '#1F3D7A',
+          700: '#1B3A7B',
+          800: '#142D5F',
+          900: '#0E2046',
         },
+        // Stark whites + light blue-gray for subtle section variation.
         cream: {
-          50: '#FFFBF5',
-          100: '#FCF7EE',
-          200: '#F5ECDB',
+          50: '#F5F7FB',
+          100: '#FFFFFF',
+          200: '#EFF2F7',
         },
         sand: {
           50: '#F8F5EE',
@@ -38,9 +45,9 @@ export default {
           200: '#DCD3BD',
         },
         ink: {
-          DEFAULT: '#1F1D1A',
-          soft: '#5A5651',
-          muted: '#8B867E',
+          DEFAULT: '#0F1B2E',
+          soft: '#3F4A60',
+          muted: '#7A8497',
         },
       },
       fontFamily: {
@@ -51,8 +58,8 @@ export default {
         '4xl': '2rem',
       },
       boxShadow: {
-        soft: '0 1px 2px rgba(31, 29, 26, 0.04), 0 8px 24px rgba(31, 29, 26, 0.06)',
-        lift: '0 2px 6px rgba(31, 29, 26, 0.06), 0 16px 32px rgba(31, 29, 26, 0.08)',
+        soft: '0 1px 2px rgba(15, 27, 46, 0.04), 0 8px 24px rgba(15, 27, 46, 0.07)',
+        lift: '0 2px 6px rgba(15, 27, 46, 0.06), 0 16px 32px rgba(15, 27, 46, 0.10)',
       },
       maxWidth: {
         prose: '68ch',

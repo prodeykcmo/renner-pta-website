@@ -6,14 +6,14 @@ export default function BoardCard({ member }: { member: BoardMember }) {
     <div className="flex flex-col rounded-3xl bg-white p-5 shadow-soft ring-1 ring-ink/5">
       <div className="flex items-center gap-3">
         <span
-          className="grid h-12 w-12 place-items-center rounded-full bg-scarlet-50 font-display text-lg font-semibold text-scarlet-700"
+          className="grid h-12 w-12 place-items-center rounded-full bg-navy-700 font-display text-lg font-semibold text-cream-50"
           aria-hidden
         >
           {member.name === 'TBD' ? '?' : member.name.charAt(0)}
         </span>
         <div>
           <p className="font-semibold text-ink">{member.name}</p>
-          <p className="text-sm text-scarlet-700">{member.role}</p>
+          <p className="text-sm font-medium text-scarlet-600">{member.role}</p>
         </div>
       </div>
       {member.bio && (

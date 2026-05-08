@@ -7,13 +7,13 @@ export default function EventCard({ event }: { event: FeaturedEvent }) {
     <article className="flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-ink/5">
       <div className="flex items-center gap-3">
         <span
-          className="grid h-11 w-11 place-items-center rounded-2xl bg-scarlet-50 text-scarlet-700"
+          className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700"
           aria-hidden
         >
           <Icon name="calendar" className="h-6 w-6" />
         </span>
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wider text-scarlet-700">
+          <p className="text-sm font-semibold uppercase tracking-wider text-scarlet-600">
             {event.dateLabel}
           </p>
           {event.time && (

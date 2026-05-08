@@ -39,8 +39,9 @@ export const siteConfig = {
 
   // Social
   social: {
-    facebook: 'https://facebook.com/RennerPTA',
+    facebook: 'https://www.facebook.com/RennerPTA',
     instagram: 'https://instagram.com/rennerpta',
+    tiktok: 'https://www.tiktok.com/@renner.elementary8',
   },
 
   // -------------------------------------------------------------------------
