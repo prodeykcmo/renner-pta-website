@@ -42,6 +42,8 @@ export const siteConfig = {
     facebook: 'https://www.facebook.com/RennerPTA',
     instagram: 'https://instagram.com/rennerpta',
     tiktok: 'https://www.tiktok.com/@renner.elementary8',
+    // School's official X account (district), not PTA-specific.
+    x: 'https://x.com/parkhillrenner',
   },
 
   // -------------------------------------------------------------------------
@@ -64,9 +66,26 @@ export const siteConfig = {
     // Spirit wear store (Glory Days Threads)
     spiritwear: '#', // TODO: paste Glory Days Threads URL
 
+    // Official Renner Elementary "Families" hub on the district site —
+    // handbook, supply lists, transportation, attendance, health, etc.
+    // This is the school's page; this PTA site is separate.
+    rennerFamiliesHub: 'https://renner.parkhill.k12.mo.us/families',
+
     // Park Hill Clothing Center (district resource)
     parkHillClothing:
-      'https://www.parkhill.k12.mo.us/our-district/community-engagement/park-hill-clothing-center',
+      'https://www.parkhill.k12.mo.us/families/pta-clothing-center',
+
+    // SignUpGenius slots to volunteer at the Park Hill Clothing Center
+    clothingCenterVolunteer:
+      'https://www.signupgenius.com/go/508084fa4a72ba0fa7-canyou#/',
+
+    // Park Hill District Council PTA (district-level board, meeting dates, SEPAC)
+    districtPta:
+      'https://www.parkhill.k12.mo.us/families/district-council-pta',
+
+    // Park Hill Nutrition Services — lunch menu, free/reduced meals, allergens
+    nutritionMenu:
+      'https://www.parkhill.k12.mo.us/families/nutrition-services',
 
     // Recurring Microsoft Teams meeting link for monthly PTA meetings
     ptaMeeting: '#', // TODO: paste Teams meeting link

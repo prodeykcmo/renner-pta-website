@@ -67,6 +67,46 @@ export default function Volunteer() {
       </section>
 
       <section className="container-px pb-12">
+        <div className="rounded-[2rem] bg-scarlet-50 p-8 ring-1 ring-scarlet-100 sm:p-10">
+          <div className="grid items-start gap-6 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <span className="eyebrow text-scarlet-700">Right now — Park Hill District</span>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-navy-700 sm:text-3xl">
+                Volunteer at the Park Hill Clothing Center
+              </h2>
+              <p className="mt-3 max-w-2xl text-ink-soft">
+                The district's free clothing center serves every Park Hill family. Sort donations,
+                hand out essentials, or help families shop — pick a slot that fits your week.
+              </p>
+              <p className="mt-2 text-sm text-ink-muted">
+                Open to all Renner families. Signups managed through the district on SignUpGenius.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+              <CTAButton
+                href={siteConfig.links.clothingCenterVolunteer}
+                target="_blank"
+                rel="noreferrer noopener"
+                size="md"
+                withArrow
+              >
+                Sign up for a slot
+              </CTAButton>
+              <CTAButton
+                href={siteConfig.links.parkHillClothing}
+                target="_blank"
+                rel="noreferrer noopener"
+                size="md"
+                variant="ghost"
+              >
+                About the center
+              </CTAButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-px pb-12">
         <SectionHeader
           eyebrow="What you can do"
           title="Where extra hands always help"

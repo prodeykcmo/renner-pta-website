@@ -16,6 +16,7 @@ type IconName =
   | 'instagram'
   | 'facebook'
   | 'tiktok'
+  | 'x'
   | 'mail'
   | 'phone'
   | 'calendar'
@@ -144,6 +145,12 @@ export default function Icon({ name, className = 'h-5 w-5', ...rest }: IconProps
       return (
         <svg {...common}>
           <path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.5v13.7a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.4a6.6 6.6 0 0 0-1-.1A6.3 6.3 0 1 0 15.7 15.7V9a8.1 8.1 0 0 0 4.8 1.5V7.1a4.8 4.8 0 0 1-.9-.4Z" />
+        </svg>
+      );
+    case 'x':
+      return (
+        <svg {...common}>
+          <path d="M4 4l16 16M20 4 4 20" />
         </svg>
       );
     case 'mail':

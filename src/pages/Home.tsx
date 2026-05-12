@@ -199,6 +199,105 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Renner Families hub — the school's official info page on the district site.
+          Separate from this PTA site. Featured prominently because it covers
+          handbook, supply lists, transportation, etc. */}
+      <section className="container-px pt-12">
+        <a
+          href={siteConfig.links.rennerFamiliesHub}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="group block overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy-700 to-navy-700/90 p-8 text-cream-50 shadow-lift ring-1 ring-navy-700/10 transition hover:shadow-lift sm:p-10"
+        >
+          <div className="grid items-center gap-6 md:grid-cols-[1fr_auto]">
+            <div>
+              <span className="eyebrow bg-cream-50/15 text-cream-50">Renner school info</span>
+              <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+                Looking for the handbook, supply lists, or attendance info?
+              </h2>
+              <p className="mt-3 max-w-2xl text-cream-50/90">
+                The school's official <strong>Renner Families</strong> page has handbook, supply
+                lists, transportation, attendance, health services, kindergarten readiness, and
+                more. This PTA site is separate — for school policies and official info, that's
+                the place.
+              </p>
+              <p className="mt-2 text-sm text-cream-50/70">
+                Opens on renner.parkhill.k12.mo.us
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-2 self-start rounded-full bg-cream-50 px-5 py-3 text-sm font-semibold text-navy-700 shadow-soft transition group-hover:bg-white">
+              Open the families page
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </span>
+          </div>
+        </a>
+      </section>
+
+      {/* Park Hill District resources — quick links to district-level pages families need most. */}
+      <section className="container-px py-12">
+        <SectionHeader
+          eyebrow="Park Hill District"
+          title="District resources, in one place"
+          description="Direct links to the Park Hill pages Renner families ask about most. These open on the district site."
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <a
+            href={siteConfig.links.districtPta}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100 transition hover:-translate-y-0.5 hover:shadow-lift"
+          >
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
+              <Icon name="users" className="h-6 w-6" />
+            </span>
+            <h3 className="mt-4 text-xl font-semibold">District Council PTA</h3>
+            <p className="mt-2 flex-1 leading-relaxed text-ink-soft">
+              The district-level PTA board, monthly meeting dates, and SEPAC (special education) contacts.
+            </p>
+            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 group-hover:text-scarlet-700">
+              Open on parkhill.k12.mo.us <Icon name="arrow-right" className="h-4 w-4" />
+            </span>
+          </a>
+
+          <a
+            href={siteConfig.links.nutritionMenu}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100 transition hover:-translate-y-0.5 hover:shadow-lift"
+          >
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
+              <Icon name="gift" className="h-6 w-6" />
+            </span>
+            <h3 className="mt-4 text-xl font-semibold">Lunch menu & nutrition</h3>
+            <p className="mt-2 flex-1 leading-relaxed text-ink-soft">
+              Daily menus, free/reduced meal applications, allergen info, and the cafeteria payment portal.
+            </p>
+            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 group-hover:text-scarlet-700">
+              Open on parkhill.k12.mo.us <Icon name="arrow-right" className="h-4 w-4" />
+            </span>
+          </a>
+
+          <a
+            href={siteConfig.links.parkHillClothing}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100 transition hover:-translate-y-0.5 hover:shadow-lift"
+          >
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
+              <Icon name="heart" className="h-6 w-6" />
+            </span>
+            <h3 className="mt-4 text-xl font-semibold">Park Hill Clothing Center</h3>
+            <p className="mt-2 flex-1 leading-relaxed text-ink-soft">
+              Free clothing for any Park Hill family — plus a SignUpGenius for parents who want to
+              volunteer there.
+            </p>
+            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 group-hover:text-scarlet-700">
+              Open on parkhill.k12.mo.us <Icon name="arrow-right" className="h-4 w-4" />
+            </span>
+          </a>
+        </div>
+      </section>
+
       {/* Closing CTA — bold red school-spirit panel */}
       <section className="container-px py-16">
         <div className="overflow-hidden rounded-[2rem] bg-scarlet-600 px-8 py-12 text-cream-50 shadow-lift sm:px-12 sm:py-16">
