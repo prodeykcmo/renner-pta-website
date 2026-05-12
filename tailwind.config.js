@@ -32,6 +32,31 @@ export default {
           700: '#1B3A7B',
           800: '#142D5F',
           900: '#0E2046',
+          DEFAULT: '#1B3A7B',
+          light: '#2A52A8',
+          dark: '#122860',
+        },
+        // Vibrant Roadrunner gold — primary CTA color (added Change 1).
+        gold: {
+          50: '#FFFBEB',
+          100: '#FFF0C2',
+          200: '#FCE08A',
+          300: '#F7CB52',
+          400: '#F0B924',
+          500: '#E8A800',
+          600: '#CD9500',
+          700: '#B88200',
+          800: '#8E6500',
+          900: '#604300',
+          DEFAULT: '#E8A800',
+          light: '#FFF0C2',
+          dark: '#B88200',
+        },
+        // Roadrunner Red — energy/accent color for fundraisers and urgent CTAs.
+        roadrunnerRed: {
+          DEFAULT: '#C8102E',
+          light: '#FFE8EC',
+          dark: '#9E0C23',
         },
         // Stark whites + light blue-gray for subtle section variation.
         cream: {

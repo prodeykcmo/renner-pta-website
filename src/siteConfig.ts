@@ -88,7 +88,8 @@ export const siteConfig = {
       'https://www.parkhill.k12.mo.us/families/nutrition-services',
 
     // Recurring Microsoft Teams meeting link for monthly PTA meetings
-    ptaMeeting: '#', // TODO: paste Teams meeting link
+    ptaMeeting:
+      'https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_NmE2NjUxNTUtOGNlMy00NmQ4LTlhMTMtOTVjZWIzODBmZjkx%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522201533f2-95f9-4b74-b6d9-26c5d9f73311%2522%252c%2522Oid%2522%253a%25226ff8f329-51a7-46ba-b001-091274da851d%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=91082e79-3d0e-480e-885e-d705690e95d5&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true',
 
     // Newsletter signup (use Zeffy email tools, Mailchimp, or Tally)
     newsletter: '#', // TODO

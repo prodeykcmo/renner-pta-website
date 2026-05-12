@@ -5,13 +5,13 @@ import EventCard from '../components/EventCard';
 import Icon from '../components/Icon';
 import SeoHead from '../components/SeoHead';
 import { siteConfig } from '../siteConfig';
-import { featuredEvents } from '../data/events';
+import { getFeaturedEvents } from '../data/events';
 
 const ways = [
   {
     icon: 'star' as const,
     title: 'Join the PTA',
-    body: 'Annual dues fund every event, fundraiser, and classroom moment we make happen. Sign up online in 2 minutes.',
+    body: 'Annual dues are $15 per family and fund every event, fundraiser, and classroom moment we make happen. Sign up online in 2 minutes.',
     href: siteConfig.links.membership,
     label: 'Become a member',
   },
@@ -32,6 +32,7 @@ const ways = [
 ];
 
 export default function Home() {
+  const featured = getFeaturedEvents(4);
   return (
     <>
       <SeoHead
@@ -65,27 +66,29 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer noopener"
                   size="lg"
+                  variant="primary"
                   withArrow
                 >
                   Join the PTA
                 </CTAButton>
-                <CTAButton to="/volunteer" size="lg" variant="ghost">
+                <CTAButton to="/volunteer" size="lg" variant="secondary">
                   Volunteer
                 </CTAButton>
-                <CTAButton to="/donate" size="lg" variant="navy">
+                <CTAButton to="/donate" size="lg" variant="secondary">
                   Donate
                 </CTAButton>
               </div>
+              <p className="mt-2 text-sm text-gray-500">
+                $15 / year per family · 100% stays at Renner
+              </p>
               <p className="mt-6 text-sm text-ink-muted">
                 Mobile-friendly. Available in 100+ languages — see the bar at the top of every page.
               </p>
             </div>
 
-            {/* Hero — roadrunner logo featured prominently */}
             <div className="relative">
-              {/* Soft red glow underneath */}
               <div
-                className="absolute -inset-6 -z-10 rounded-full bg-scarlet-100/40 blur-3xl"
+                className="absolute -inset-6 -z-10 rounded-full bg-gold-light/40 blur-3xl"
                 aria-hidden
               />
               <div
@@ -102,7 +105,7 @@ export default function Home() {
                   }}
                 />
                 <div className="mt-6 border-t border-navy-100 pt-5 text-center">
-                  <p className="font-display text-2xl font-bold text-scarlet-600">
+                  <p className="font-display text-2xl font-bold text-roadrunnerRed">
                     Go Roadrunners!
                   </p>
                   <p className="mt-1 text-sm font-medium text-navy-700">
@@ -112,6 +115,115 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Change 4 — Social proof bar */}
+      <section className="bg-navy py-8">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 px-6 text-center md:grid-cols-4">
+          <div>
+            <p className="text-3xl font-bold text-gold">450+</p>
+            <p className="mt-1 text-sm text-white">Renner families</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-gold">$15</p>
+            <p className="mt-1 text-sm text-white">per family, per year</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-gold">100%</p>
+            <p className="mt-1 text-sm text-white">stays at Renner</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-gold">6+</p>
+            <p className="mt-1 text-sm text-white">events every year</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured upcoming events (auto-populated from data/events featured: true) */}
+      <section className="bg-cream-200/50 py-16">
+        <div className="container-px">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeader
+              eyebrow="What's coming up"
+              title="Featured events"
+              description="A few highlights this season. The full calendar lives on the events page."
+            />
+            <Link
+              to="/events"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-navy-light"
+            >
+              See full calendar <Icon name="arrow-right" className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {featured.map((e) => (
+              <EventCard key={e.id} event={e} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Change 8 — Stay in the loop */}
+      <section className="container-px py-12">
+        <div className="rounded-[2rem] bg-gold-light p-8 ring-1 ring-gold/30 sm:p-12">
+          <div className="max-w-2xl">
+            <span className="eyebrow bg-white/50 text-navy">Stay in the loop</span>
+            <h2 className="mt-3 font-display text-3xl font-semibold text-navy-700 sm:text-4xl">
+              The best way to get PTA news is to become a member.
+            </h2>
+            <p className="mt-3 text-ink-soft">
+              Event reminders, volunteer opportunities, and school updates — all in 2 minutes and
+              $15 a year.
+            </p>
+            <div className="mt-6">
+              <CTAButton
+                href={siteConfig.links.membership}
+                target="_blank"
+                rel="noreferrer noopener"
+                size="lg"
+                variant="primary"
+                withArrow
+              >
+                Join the PTA — $15/year
+              </CTAButton>
+            </div>
+            <p className="mt-3 text-xs text-ink-muted">
+              Questions? Email us at{' '}
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="text-navy underline hover:text-navy-light"
+              >
+                {siteConfig.contact.email}
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Change 11B — Resources callout */}
+      <section className="container-px py-10">
+        <div className="rounded-[2rem] bg-stone-50 p-8 ring-1 ring-ink/10 sm:p-12">
+          <div className="grid items-center gap-6 md:grid-cols-[1fr_auto]">
+            <div>
+              <span className="eyebrow bg-white text-navy">For every Renner family</span>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-navy-700 sm:text-3xl">
+                Find community resources.
+              </h2>
+              <p className="mt-3 max-w-2xl text-ink-soft">
+                A directory of free resources available through Renner Elementary, the Park Hill
+                District, and our community — including the PTA Clothing Center, school lunch
+                programs, language support, and more. No membership required.
+              </p>
+              <p className="mt-2 text-xs text-ink-muted">
+                Resources listed are operated by the school, district, or community — not the
+                Renner PTA.
+              </p>
+            </div>
+            <CTAButton to="/resources" size="lg" variant="secondary" withArrow>
+              Browse resources
+            </CTAButton>
           </div>
         </div>
       </section>
@@ -129,7 +241,7 @@ export default function Home() {
               key={w.title}
               className="flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gold-light text-navy">
                 <Icon name={w.icon} className="h-6 w-6" />
               </span>
               <h3 className="mt-4 text-xl font-semibold">{w.title}</h3>
@@ -156,33 +268,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured upcoming events */}
-      <section className="bg-cream-200/50 py-16">
-        <div className="container-px">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeader
-              eyebrow="What's coming up"
-              title="Featured events"
-              description="A few highlights this season. The full calendar lives on the events page."
-            />
-            <Link
-              to="/events"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 hover:text-scarlet-700"
-            >
-              See full calendar <Icon name="arrow-right" className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {featuredEvents.map((e) => (
-              <EventCard key={e.id} event={e} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* For teachers / embed kit promo */}
-      <section className="container-px py-16">
-        <div className="grid gap-8 rounded-[2rem] bg-navy-700 p-8 text-cream-50 shadow-lift sm:p-12 md:grid-cols-[1fr_auto] md:items-center">
+      {/* For teachers / embed kit — moved lower per spec */}
+      <section className="container-px py-12">
+        <div className="grid gap-8 rounded-[2rem] bg-navy p-8 text-cream-50 shadow-lift sm:p-12 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <span className="eyebrow bg-cream-50/15 text-cream-50">For teachers & room parents</span>
             <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
@@ -193,121 +281,22 @@ export default function Home() {
               including QR codes and translated language.
             </p>
           </div>
-          <CTAButton to="/embed-kit" size="lg" variant="primary">
+          <CTAButton to="/embed-kit" size="lg" variant="ghost" className="bg-white">
             Open the embed kit
           </CTAButton>
         </div>
       </section>
 
-      {/* Renner Families hub — the school's official info page on the district site.
-          Separate from this PTA site. Featured prominently because it covers
-          handbook, supply lists, transportation, etc. */}
-      <section className="container-px pt-12">
-        <a
-          href={siteConfig.links.rennerFamiliesHub}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="group block overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy-700 to-navy-700/90 p-8 text-cream-50 shadow-lift ring-1 ring-navy-700/10 transition hover:shadow-lift sm:p-10"
-        >
-          <div className="grid items-center gap-6 md:grid-cols-[1fr_auto]">
-            <div>
-              <span className="eyebrow bg-cream-50/15 text-cream-50">Renner school info</span>
-              <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-                Looking for the handbook, supply lists, or attendance info?
-              </h2>
-              <p className="mt-3 max-w-2xl text-cream-50/90">
-                The school's official <strong>Renner Families</strong> page has handbook, supply
-                lists, transportation, attendance, health services, kindergarten readiness, and
-                more. This PTA site is separate — for school policies and official info, that's
-                the place.
-              </p>
-              <p className="mt-2 text-sm text-cream-50/70">
-                Opens on renner.parkhill.k12.mo.us
-              </p>
-            </div>
-            <span className="inline-flex items-center gap-2 self-start rounded-full bg-cream-50 px-5 py-3 text-sm font-semibold text-navy-700 shadow-soft transition group-hover:bg-white">
-              Open the families page
-              <Icon name="arrow-right" className="h-4 w-4" />
-            </span>
-          </div>
-        </a>
-      </section>
-
-      {/* Park Hill District resources — quick links to district-level pages families need most. */}
-      <section className="container-px py-12">
-        <SectionHeader
-          eyebrow="Park Hill District"
-          title="District resources, in one place"
-          description="Direct links to the Park Hill pages Renner families ask about most. These open on the district site."
-        />
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          <a
-            href={siteConfig.links.districtPta}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100 transition hover:-translate-y-0.5 hover:shadow-lift"
-          >
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
-              <Icon name="users" className="h-6 w-6" />
-            </span>
-            <h3 className="mt-4 text-xl font-semibold">District Council PTA</h3>
-            <p className="mt-2 flex-1 leading-relaxed text-ink-soft">
-              The district-level PTA board, monthly meeting dates, and SEPAC (special education) contacts.
-            </p>
-            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 group-hover:text-scarlet-700">
-              Open on parkhill.k12.mo.us <Icon name="arrow-right" className="h-4 w-4" />
-            </span>
-          </a>
-
-          <a
-            href={siteConfig.links.nutritionMenu}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100 transition hover:-translate-y-0.5 hover:shadow-lift"
-          >
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
-              <Icon name="gift" className="h-6 w-6" />
-            </span>
-            <h3 className="mt-4 text-xl font-semibold">Lunch menu & nutrition</h3>
-            <p className="mt-2 flex-1 leading-relaxed text-ink-soft">
-              Daily menus, free/reduced meal applications, allergen info, and the cafeteria payment portal.
-            </p>
-            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 group-hover:text-scarlet-700">
-              Open on parkhill.k12.mo.us <Icon name="arrow-right" className="h-4 w-4" />
-            </span>
-          </a>
-
-          <a
-            href={siteConfig.links.parkHillClothing}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-soft ring-1 ring-navy-100 transition hover:-translate-y-0.5 hover:shadow-lift"
-          >
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-navy-50 text-navy-700">
-              <Icon name="heart" className="h-6 w-6" />
-            </span>
-            <h3 className="mt-4 text-xl font-semibold">Park Hill Clothing Center</h3>
-            <p className="mt-2 flex-1 leading-relaxed text-ink-soft">
-              Free clothing for any Park Hill family — plus a SignUpGenius for parents who want to
-              volunteer there.
-            </p>
-            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-scarlet-600 group-hover:text-scarlet-700">
-              Open on parkhill.k12.mo.us <Icon name="arrow-right" className="h-4 w-4" />
-            </span>
-          </a>
-        </div>
-      </section>
-
-      {/* Closing CTA — bold red school-spirit panel */}
+      {/* Closing CTA — gold panel for visual punch */}
       <section className="container-px py-16">
-        <div className="overflow-hidden rounded-[2rem] bg-scarlet-600 px-8 py-12 text-cream-50 shadow-lift sm:px-12 sm:py-16">
+        <div className="overflow-hidden rounded-[2rem] bg-navy px-8 py-12 text-cream-50 shadow-lift sm:px-12 sm:py-16">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
             <div>
               <h2 className="font-display text-3xl font-semibold sm:text-4xl">
                 Renner runs on volunteers and dues.
               </h2>
               <p className="mt-3 max-w-xl text-cream-50/95">
-                Two minutes and $10 of dues unlocks every PTA-funded moment of your child's year.
+                Two minutes and $15 of dues unlocks every PTA-funded moment of your child's year.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -316,7 +305,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 size="lg"
-                variant="navy"
+                variant="primary"
               >
                 Join the PTA
               </CTAButton>
@@ -324,7 +313,7 @@ export default function Home() {
                 to="/donate"
                 size="lg"
                 variant="ghost"
-                className="bg-white/10 text-cream-50 ring-cream-50/40 hover:bg-white/20"
+                className="bg-transparent text-cream-50 border-cream-50/40 hover:bg-white/10"
               >
                 Donate
               </CTAButton>

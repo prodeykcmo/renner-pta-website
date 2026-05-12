@@ -15,11 +15,13 @@ const cols: { heading: string; links: FooterLink[] }[] = [
       { to: '/volunteer', label: 'Volunteer' },
       { to: '/donate', label: 'Donate' },
       { to: '/sponsors', label: 'Become a sponsor' },
+      { href: siteConfig.links.membership, label: 'Get PTA updates' },
     ],
   },
   {
     heading: 'Find info',
     links: [
+      { to: '/resources', label: 'Community resources' },
       { href: siteConfig.links.rennerFamiliesHub, label: 'Renner school site' },
       { to: '/events', label: 'Events calendar' },
       { to: '/documents', label: 'Meeting minutes' },

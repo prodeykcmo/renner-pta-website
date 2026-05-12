@@ -4,12 +4,15 @@ import CTAButton from './CTAButton';
 import Icon from './Icon';
 import { siteConfig } from '../siteConfig';
 
+// "Join the PTA" deliberately omitted — it lives on the right as a gold
+// CTA button (visually separated from text nav). It's added back into the
+// mobile menu list explicitly below.
 const navItems = [
   { to: '/events', label: 'Events' },
-  { to: '/join', label: 'Join the PTA' },
   { to: '/volunteer', label: 'Volunteer' },
   { to: '/donate', label: 'Donate' },
   { to: '/sponsors', label: 'Sponsors' },
+  { to: '/resources', label: 'Resources' },
   { to: '/documents', label: 'Documents' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -69,8 +72,10 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="hidden lg:block">
-          <CTAButton to="/join" variant="primary" size="md">
+        <div className="hidden items-center gap-3 lg:flex">
+          {/* Small divider visually separates the gold CTA from text nav. */}
+          <span aria-hidden className="h-6 w-px bg-ink/15" />
+          <CTAButton to="/join" variant="primary" size="md" withArrow>
             Join the PTA
           </CTAButton>
         </div>

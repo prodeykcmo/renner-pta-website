@@ -11,6 +11,7 @@ import Donate from './pages/Donate';
 import EmbedKit from './pages/EmbedKit';
 import Documents from './pages/Documents';
 import Sponsors from './pages/Sponsors';
+import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/embed-kit" element={<EmbedKit />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
